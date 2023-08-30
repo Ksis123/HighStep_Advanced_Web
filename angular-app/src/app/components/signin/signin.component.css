@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nunito&display=swap');
 
 
 .welcome {
@@ -7,17 +8,17 @@
     align-items: center;
     justify-self: center;
     width: 100%;
-    padding-right: 50px;
-    padding-left: 50px;
+    padding-right: 80px;
+    padding-left: 80px;
     padding-bottom: 600px;
     
   }
   
 .welcome h1 {
-    font-family: 'Nunito', sans-serif;
-    src:url(./Nunito/Nunito-Bold.ttf);
+    font-family: 'Luckiest Guy', cursive;
+    /* src:url(./Nunito/Nunito-Bold.ttf); */
     font-size: 4.5rem;
-    color: #1e1d1d;
+    color: #5d3783;
 
 }
   
@@ -35,7 +36,6 @@
   font-size: 18px;
   color: #1e1d1d;
   position: absolute;  
-  left: 60px; 
 }
 
 .welcome h4{
@@ -98,9 +98,8 @@
       width: 100vw;
       height: 100vh;
       background-image: url(./image/20692.jpg);
-      background-position: left;
-      background-size: 480px 480px;
-      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
 
    }
   
@@ -115,7 +114,10 @@
       padding-top: 30px;
       padding-bottom: 20px;
       border-radius: 25px;
-      background-color: white;
+      border-color: #281C22;
+      background-color: rgb(255, 255, 255);
+
+
     }
     
 .signin-form-content {
@@ -166,8 +168,8 @@ p{
 }
   
 .submit button:hover {
-      background-color: #fffbfb;
-      color: #5dd7ef;
+      background-color: #39c4f6;
+      color: #cef6fe;
       border-radius: 15px;
       transition: 0.3s ease-in-out;
       border-color: #281C22;
