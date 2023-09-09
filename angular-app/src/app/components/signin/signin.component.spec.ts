@@ -9,7 +9,9 @@ describe('SigninComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [SigninComponent]
-    });
+    })
+    .compileComponents();
+    
     fixture = TestBed.createComponent(SigninComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

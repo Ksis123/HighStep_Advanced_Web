@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
-import { SigninService } from 'src/app/services/signin.service';
-import { first } from 'rxjs/operators';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { SigninService } from '../../services/signin.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
+  styleUrls: ['./signin.component.css'],
 })
-export class SigninComponent {
+export class SigninComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl?: string;
 
-  signinForm = new FormGroup({
+  loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
       Validators.required,
@@ -26,11 +26,11 @@ export class SigninComponent {
   signup!: string;
 
   constructor(
-    private signin: SigninService,
+    private login: SigninService,
     private router: Router,
     private route: ActivatedRoute
   ) {
-    if (this.signin.currentUserValue) {
+    if (this.login.currentUserValue) {
       this.router.navigate(['/']);
     }
 
@@ -43,15 +43,15 @@ export class SigninComponent {
 
   signIn() {
     this.submitted = true;
-    //console.log(this.signinForm.value);
+    //console.log(this.loginForm.value);
 
-    if (this.signinForm.invalid) {
+    if (this.loginForm.invalid) {
       return;
     }
 
     this.loading = true;
-    this.signin
-      .signIn(this.signinForm.value)
+    this.login
+      .signIn(this.loginForm.value)
       .pipe(first())
       .subscribe((data) => {
         console.log(data);
@@ -68,11 +68,11 @@ export class SigninComponent {
   }
 
   get email() {
-    return this.signinForm.get('email');
+    return this.loginForm.get('email');
   }
 
   get password() {
-    return this.signinForm.get('password');
+    return this.loginForm.get('password');
   }
 
   onClick() {

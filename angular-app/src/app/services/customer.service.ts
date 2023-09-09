@@ -1,27 +1,27 @@
 import { Injectable } from '@angular/core';
+
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { customer, cusModel } from '../models/customer';
-
+import { cusModel, customer } from '../models/customer';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CustomerService {
 
-  constructor(private http: HttpClient) { }
+export class CustomerService {
+  constructor(private http: HttpClient) {}
 
   customers: any;
   customer?: cusModel[];
 
-  emp?: customer;
+  cus?: customer;
 
   getCustomer() {
     return this.http.get<customer>('http://localhost:3000/api/customer').pipe(
       map((data) => {
         if (data) {
           this.customers = data;
-          console.log(this.customer);
+          console.log(this.customers);
         }
         return this.customers;
       })
@@ -34,10 +34,10 @@ export class CustomerService {
       .pipe(
         map((data) => {
           if (data) {
-            this.emp = data;
-            //console.log(this.employee);
+            this.cus = data;
+            console.log(this.customer);
           }
-          return this.emp;
+          return this.cus;
         })
       );
   }
@@ -54,14 +54,11 @@ export class CustomerService {
         })
       );
   }
-
   addCustomer(d: any) {
-    return this.http.post<any>('http://localhost:3000/signin/signup', d).pipe(
+    return this.http.post<any>('http://localhost:3000/login/signup', d).pipe(
       map((data) => {
         return data;
       })
     );
   }
-
-
 }

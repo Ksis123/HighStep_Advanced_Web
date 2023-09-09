@@ -1,18 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
-
   @Input() signup!: string;
 
   customerForm = new FormGroup({
-    //id: new FormControl('', [Validators.required]),
     CusID: new FormControl('', [Validators.required]),
     name: new FormControl('', [Validators.required]),
     gender: new FormControl('', [Validators.required]),
@@ -26,7 +24,7 @@ export class SignupComponent implements OnInit {
 
   p = new FormControl('', [Validators.required, Validators.minLength(6)]);
 
-  constructor(private em: CustomerService) {}
+  constructor(private cus: CustomerService) {}
 
   ngOnInit(): void {
     console.log(this.signup);
@@ -45,8 +43,7 @@ export class SignupComponent implements OnInit {
 
   submit() {
     const e = JSON.parse(JSON.stringify(this.customerForm.value));
-    //console.log(e);
-    //console.log(this.p.value);
+
     if (this.Check(e.password, this.p.value)) {
       alert('Passwords do not match');
       return;
@@ -57,7 +54,7 @@ export class SignupComponent implements OnInit {
     }
 
     try {
-      this.em.addCustomer(e).subscribe(
+      this.cus.addCustomer(e).subscribe(
         (data) => {
           console.log(data);
           alert('Sign Up Successfully!');
@@ -79,9 +76,4 @@ export class SignupComponent implements OnInit {
   get email() {
     return this.customerForm.get('email');
   }
-
 }
-
-
-
-

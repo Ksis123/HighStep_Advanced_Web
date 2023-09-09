@@ -11,10 +11,9 @@ import { OrderService } from 'src/app/services/order.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-   
   date!: Date;
   constructor(
     private cart: CartService,
@@ -65,7 +64,7 @@ export class CartComponent implements OnInit {
       return;
     }
     this.data.push({
-      ordering: this.cart.getCartid(),
+      menuordering: this.cart.getCartid(),
       sumprice: this.cart.getSumPrice(),
       time: new Date(),
     });
@@ -77,5 +76,4 @@ export class CartComponent implements OnInit {
     this.order.addOrder(jsonObject[0]);
     this.order.submitStatus = true;
   }
-
 }

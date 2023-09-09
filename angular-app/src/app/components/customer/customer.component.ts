@@ -1,5 +1,5 @@
-import { Component, OnInit} from '@angular/core';
-import { CustomerService } from 'src/app/services/customer.service';
+import { Component, NgModule, OnInit } from '@angular/core';
+import { CustomerService } from '../../services/customer.service'
 import { Router } from '@angular/router';
 
 
@@ -9,18 +9,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./customer.component.css']
 })
 
-export class CustomerComponent implements OnInit{
+export class CustomerComponent implements OnInit {
 
-  ListCustomer: any;
-  constructor(private customer: CustomerService, private router: Router) {  this.onLoading(); }
+  ListCustomers: any;
+  constructor(private customer: CustomerService, private router: Router) { this.onLoading(); }
 
   ngOnInit(): void {
+    
   }
   onLoading() {
     try {
       this.customer.getCustomer().subscribe(
         (data) => {
-          this.ListCustomer = data;
+          this.ListCustomers = data;
         },
         (err) => {
           console.log(err);
@@ -30,9 +31,4 @@ export class CustomerComponent implements OnInit{
       console.log(err);
     }
   }
-
-  onClick() {
-    this.router.navigate(['/category']);
-  }
-
 }

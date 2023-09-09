@@ -1,40 +1,46 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SigninComponent } from './components/signin/signin.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { CategoryComponent } from './components/category/category.component';
+import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { OrderComponent } from './components/order/order.component';
 import { MainComponent } from './components/main/main.component';
-import { CartComponent } from './components/cart/cart.component';
 import { HomeComponent } from './components/home/home.component';
+import { AuthInterceptor } from './Auth/auth.interceptor';
+import { ShowDetailsComponent } from './components/show-details/show-details.component';
+import { ManageComponent } from './components/manage/manage.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { ShoworderComponent } from './components/showorder/showorder.component';
+import { ShoeComponent } from './components/shoe/shoe.component';
+import { OrderComponent } from './components/order/order.component';
+import { CartComponent } from './components/cart/cart.component';
+import { AddshoeComponent } from './components/addshoe/addshoe.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CartComponent,
-    CategoryComponent,
-    MainComponent,
+    AppComponent, 
+    LoginComponent,
     NavbarComponent,
-    OrderComponent,
-    SigninComponent,
+    MainComponent, 
+    HomeComponent, 
+    ShowDetailsComponent,
+    ManageComponent, 
+    ProfileComponent, 
     SignupComponent,
-    HomeComponent,
-
-  ],
+    ShoeComponent, 
+    ShoworderComponent, OrderComponent, CartComponent, AddshoeComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

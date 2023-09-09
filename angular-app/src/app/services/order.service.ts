@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { order, orderModel } from '../models/order';
-import { cateModel } from '../models/category';
-import { CategoryService } from './category.service';
+import { ShoeService } from './shoe.service';
 import { CartService } from './cart.service';
 
 @Injectable({
@@ -11,12 +10,15 @@ import { CartService } from './cart.service';
 })
 export class OrderService {
 
-  constructor(private http: HttpClient, private cartService: CartService, private categoryService: CategoryService)  { }
+  constructor(private http: HttpClient, private cartService: CartService, private shoeService: ShoeService) {}
 
   orders: any;
   order?: orderModel[];
-
+  
   submitStatus = false;
+
+  
+
 
   getOrder() {
     return this.http.get<order>('http://localhost:3000/api/order').pipe(
