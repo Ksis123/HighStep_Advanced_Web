@@ -61,10 +61,10 @@
                 <div class="col-md-3">size:</div>
                 <div class="col-md-9">
                   <div class="form-group">
-                    <input type="number" class="form-control" formControlName="MID" />
+                    <input type="number" class="form-control" formControlName="size" />
                     <div *ngIf="size?.invalid && (size?.dirty || size?.touched)" class="alert alert-danger">
                       <div *ngIf="size?.errors?.['required']">
-                        MID is required.
+                        size is required.
                       </div>
                     </div>
                   </div>
