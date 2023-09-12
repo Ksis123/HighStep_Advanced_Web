@@ -75,7 +75,7 @@
 }
   
 .welcome-signup h1{
-  font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito', sans-serif;
     src:url(./Nunito/Nunito-Regular.ttf);
     font-size: 3.5rem;
     color: #ffffff;

@@ -22,27 +22,6 @@ export class ManageComponent implements OnInit {
     this.shoe.deleteShoe(item);
   }
 
-  UpdateShoeID(id: any) {
-    try {
-      this.shoe
-        .UpdateShoeID(id)
-        .pipe(first())
-        .subscribe(
-          (data) => {
-            console.log(data);
-            alert('Update Menu Successfully..');
-            location.reload();
-          },
-          (err) => {
-            console.log(err);
-            alert('Update Menu fail!');
-          }
-        );
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
   onClick() {
     this.router.navigate(['/addshoe']);
   }

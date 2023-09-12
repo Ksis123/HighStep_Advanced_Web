@@ -29,9 +29,9 @@
                 </div>
                 <div class="card-body">
                   <div class="row" style="padding: 5px">
-                    <div class="col-lg-4">MID:</div>
+                    <div class="col-lg-4">Size:</div>
                     <div class="col-lg-8 text-left">
-                      {{ ShoeData.MID }}
+                      {{ ShoeData.size }}
                     </div>
                   </div>
 
@@ -55,7 +55,7 @@
                   <div class="row" style="padding: 5px">
                     <div class="col-lg-4">Price:</div>
                     <div class="col-lg-8 text-left">
-                      {{ ShoeData.price }}&nbsp; ฿
+                      ฿ {{ ShoeData.price }}&nbsp; 
                     </div>
                   </div>
 
@@ -80,9 +80,11 @@
       <br />
       
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          Close
-        </button>
+        <div class="style">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+        </div>
       </div>
     </div>
   </div>

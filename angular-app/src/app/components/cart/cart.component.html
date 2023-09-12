@@ -21,22 +21,21 @@
         </div>
   
         <div class="col-lg-8">Amount product :</div>
-        <div class="col-lg-4">{{ getCounter() }} glasses</div>
+        <div class="col-lg-4">{{ getCounter() }} pair</div>
         <br /><br />
         <div class="col-lg-8">SumTotal :</div>
-        <div class="col-lg-4">{{ getSumPrice() }} ฿</div>
+        <div class="col-lg-4">฿ {{ getSumPrice() }} </div>
         <br /><br />
         <div class="col-lg-8">The change :</div>
-        <div class="col-lg-4">{{ getChangePrice() }} ฿</div>
+        <div class="col-lg-4">฿ {{ getChangePrice() }} </div>
         <br /><br />
       </div>
-  
       <div class="col-md-12">
         <div class="style text-center">
           <button type="button" class="button btn btn-primary" (click)="onSubmit()">
-            Payment ฿
+            ฿ Payment 
           </button>
         </div>
       </div>
     </div>
-  </div>
+</div>

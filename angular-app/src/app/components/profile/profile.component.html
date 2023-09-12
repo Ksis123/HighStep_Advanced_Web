@@ -9,28 +9,28 @@
           alt="Your Image"
         />
       </div>
-      <div class="col-md-10">
+      <div class="col-md-5">
         <div class="card">
           <div class="card-header">Profile</div>
           <div class="card-body">
             <div class="row" style="padding: 5px">
-              <div class="col-lg-2">
+              <div class="col-lg-4">
                 <i class="fa fa-id-card" aria-hidden="true"></i> Customer ID:
               </div>
-              <div class="col-lg-10 text-left">{{ customer?.CusID }}</div>
+              <div class="col-lg-6 text-left">{{ customer?.CusID }}</div>
             </div>
             <div class="row" style="padding: 5px">
-              <div class="col-lg-2">
+              <div class="col-lg-4">
                 <i class="fa fa-user-circle" aria-hidden="true"></i> Name:
               </div>
-              <div class="col-lg-10 text-left">{{ customer?.name }}</div>
+              <div class="col-lg-4 text-left">{{ customer?.name }}</div>
             </div>
             <div class="row" style="padding: 5px">
-              <div class="col-lg-2">
+              <div class="col-lg-4">
                 <i class="fa fa-venus-mars" aria-hidden="true"></i> Gender:
               </div>
 
-              <div class="col-lg-10 text-left">
+              <div class="col-lg-4 text-left">
                 <div *ngIf="customer?.gender == 'Female'">
                   {{ customer?.gender }}&nbsp;<i
                     class="bi bi-gender-female"
@@ -43,27 +43,27 @@
             </div>
 
             <div class="row" style="padding: 5px">
-              <div class="col-lg-2">
+              <div class="col-lg-4">
                 <i class="fa fa-at" aria-hidden="true"></i> Email:
               </div>
-              <div class="col-sm-10 text-left">{{ customer?.email }}</div>
+              <div class="col-sm-4 text-left">{{ customer?.email }}</div>
             </div>
             <div class="row" style="padding: 5px">
-              <div class="col-lg-2">
+              <div class="col-lg-4">
                 <i class="fa fa-phone" aria-hidden="true"></i> Phone:
               </div>
-              <div class="col-lg-10 text-left">{{ customer?.tel }}</div>
+              <div class="col-lg-4 text-left">{{ customer?.tel }}</div>
             </div>
 
-            <div class="row" style="padding: 5px">
-              <div class="col-lg-10 text-center">
+            <div class="row">
+              <div class="style col-lg-11 text-right">
                 <button
                   type="button"
-                  class="btn btn-info btn-sm"
+                  class="btn btn-dark btn-sm"
                   data-toggle="modal"
                   data-target="#edit"
                 >
-                  <i class="bi bi-pencil-fill"></i>&nbsp;Edit
+                  <i class="bi bi-pencil-fill"></i>&nbsp; Edit
                 </button>
               </div>
             </div>
@@ -173,7 +173,7 @@
             <div class="row">
               <div class="col-12 text-center">
                 <div class="row" style="padding: 5px">
-                  <div class="col-lg-12 text-center">
+                  <div class="style col-lg-12 text-center">
                     <button
                       type="button"
                       class="btn btn-info btn-sm"
@@ -190,7 +190,7 @@
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">
           Close
         </button>
       </div>

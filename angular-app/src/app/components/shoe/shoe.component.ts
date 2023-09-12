@@ -12,7 +12,7 @@ import { FormControl, Validators } from '@angular/forms';
 export class ShoeComponent implements OnInit{
 
   ListShoe: any;
-  Category = ['NIKE', 'adidas', 'converse', 'PUMA'];
+  Category = ['All', 'NIKE', 'adidas', 'PUMA'];
   constructor(
     private shoe: ShoeService,
     private router: Router,
@@ -22,7 +22,7 @@ export class ShoeComponent implements OnInit{
   }
 
   c = new FormControl('All', [Validators.required]);
-  check = 'A';
+  check = 'M';
   ShoeData: any;
 
   ngOnInit(): void {
@@ -46,9 +46,9 @@ export class ShoeComponent implements OnInit{
 
   onCheck() {
     if (this.c.value == '' || this.c.value == 'All') {
-      this.check = 'A';
+      this.check = 'M';
     } else {
-      this.check = 'B';
+      this.check = 'W';
     }
     return this.check;
   }

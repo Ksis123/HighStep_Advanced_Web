@@ -1,19 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nunito:ital,wght@0,400;1,1000&display=swap');
 
 
-table tr.highlight {
-    background-color: #4CAF50 !important;
-    color: #ffffff;
-}
-
-
 .style button {
     font-family: 'Nunito', sans-serif;
     padding: 15px 30px;
     cursor: pointer;
     border: 0px;
-    background-image: linear-gradient(225deg, #4b4a4c 50%,
-    #272426 100%);
+    background-image: linear-gradient(225deg, #343A40 50%,
+    #38444f 100%);
     position: relative;
     margin: 10px;
     transition: all 0.25s ease;
@@ -36,7 +30,7 @@ table tr.highlight {
     position: absolute;
     top: -50px;
     left: -100px;
-    background-color: #4b4a4c;
+    background-color: #343A40;
     background-image: linear-gradient(225deg, #4b4a4c 0% , #4b4a4c 50%,
     #272426 100%);
     z-index: -1;

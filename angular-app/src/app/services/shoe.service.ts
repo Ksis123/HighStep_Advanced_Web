@@ -33,7 +33,7 @@ export class ShoeService {
 
   addShoe(data: any) {
     return this.http
-      .post<any>('http://localhost:3000/api/shoe', data)
+      .post<any>('http://localhost:3000/api/addshoe', data)
       .pipe(
         map((data) => {
           return data;

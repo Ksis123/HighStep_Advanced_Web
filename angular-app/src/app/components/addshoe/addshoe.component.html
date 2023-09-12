@@ -2,7 +2,7 @@
   <div class="card-body">
     <h4 class="card-title">🔴 Add-New Shoe</h4>
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-6">
         <form [formGroup]="shoeForm">
           <div class="card">
             <div class="card-body">
@@ -24,17 +24,13 @@
                 <div class="col-md-9">
                   <div class="form-group">
                     <input type="number" class="form-control" formControlName="price" />
-                    <div
-                *ngIf="
-                price?.invalid && (price?.dirty || price?.touched)
-                "
-                class="alert alert-danger"
+                    <div *ngIf="price?.invalid && (price?.dirty || price?.touched)" class="alert alert-danger"
               >
                 <div *ngIf="price?.errors?.['required']">
                   price is required.
                 </div>
                 <div *ngIf="price?.errors?.['min'] || price?.errors?.['max']">
-                  price must be 1-100000
+                  price must be 1-100000 ฿
                 </div>
               </div>
                   </div>
@@ -58,10 +54,14 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-3">size:</div>
+                <div class="col-md-3">Size:</div>
                 <div class="col-md-9">
                   <div class="form-group">
-                    <input type="number" class="form-control" formControlName="size" />
+                    <select class="form-control" formControlName="size">
+                      <option *ngFor="let item of shoeSize" value="{{ item }}">
+                        {{ item }}
+                      </option>
+                    </select>                    
                     <div *ngIf="size?.invalid && (size?.dirty || size?.touched)" class="alert alert-danger">
                       <div *ngIf="size?.errors?.['required']">
                         size is required.
@@ -139,12 +139,13 @@
               </div>
 
               <div class="row">
-                <div class="col-md-2">
+                <div class="style col-lg-10 text-right mt-3 ">
                   <button type="button" class="btn btn-primary" (click)="onSubmit()">
                     Add
+                    <i class="bi bi-plus-circle-dotted"></i>
                   </button>
                 </div>
-                <div class="col-md-2">
+                <div class="reset mt-3">
                   <button type="reset" class="btn btn-danger">Reset</button>
                 </div>
               </div>
@@ -153,12 +154,12 @@
         </form>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-6">
         <div class="card">
-          <div class="card-header">Display</div>
+          <div class="card-header"><h4>Display</h4></div>
           <div class="card-body">
-            Form Value: {{ this.shoeForm.value | json }} <br /><br />
-            Form Status: {{ shoeForm.status | json }}
+            <h6>☑️ Form Value</h6> {{ this.shoeForm.value | json }} <br /><br />
+            <h6>☑️ Form Status</h6> {{ shoeForm.status | json }}
           </div>
         </div>
       </div>
