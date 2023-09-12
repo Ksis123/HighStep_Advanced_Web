@@ -27,9 +27,9 @@
               <div class="card" style="width: 20.5rem">
                 <img
                   [src]="item.img"
-                  class="card-img-top"
+                  class="card-img-top w-full h-64 object-cover"
                   alt="..."
-                  style="height: auto"
+                  style="height: cover"
                 />
                 <div class="card-body">
                   <h5 class="card-title">{{ item.name }}</h5>
@@ -76,7 +76,7 @@
         <div *ngFor="let item of ListShoe; index as i">
           <div *ngIf="item.type == 'Women'">
             <div class="col-md-4">
-              <div class="card" style="width: 20.5rem">
+              <div class="card w-full h-64 object-cover" style="width: 20.5rem">
                 <img [src]="item.img" class="card-img-top" alt="..." />
                 <div class="card-body">
                   <h5 class="card-title">{{ item.name }}</h5>
@@ -124,7 +124,7 @@
           <div *ngIf="item.type == 'Men' && item.category == c.value">
             <div class="col-md-4">
               <div class="card" style="width: 20.5rem">
-                <img [src]="item.img" class="card-img-top" alt="..." />
+                <img [src]="item.img" class="card-img-top w-full h-64 object-cover" alt="..." />
                 <div class="card-body">
                   <h5 class="card-title">{{ item.name }}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">
@@ -169,7 +169,7 @@
           <div *ngIf="item.type == 'Women' && item.category == c.value">
             <div class="col-md-4">
               <div class="card" style="width: 20.5rem">
-                <img [src]="item.img" class="card-img-top" alt="..." />
+                <img [src]="item.img" class="card-img-top w-full h-64 object-cover" alt="..." />
                 <div class="card-body">
                   <h5 class="card-title">{{ item.name }}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">
