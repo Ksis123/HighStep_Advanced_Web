@@ -14,11 +14,11 @@ import { ShowDetailsComponent } from './components/show-details/show-details.com
 import { ManageComponent } from './components/manage/manage.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { ShoworderComponent } from './components/showorder/showorder.component';
 import { ShoeComponent } from './components/shoe/shoe.component';
-import { OrderComponent } from './components/order/order.component';
 import { CartComponent } from './components/cart/cart.component';
 import { AddshoeComponent } from './components/addshoe/addshoe.component';
+import { CustomerComponent } from './components/customer/customer.component';
+
 
 
 @NgModule({
@@ -32,8 +32,9 @@ import { AddshoeComponent } from './components/addshoe/addshoe.component';
     ManageComponent, 
     ProfileComponent, 
     SignupComponent,
-    ShoeComponent, 
-    ShoworderComponent, OrderComponent, CartComponent, AddshoeComponent],
+    ShoeComponent,
+    CustomerComponent, 
+    CartComponent, AddshoeComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

@@ -11,7 +11,7 @@ export class SignupComponent implements OnInit {
   @Input() signup!: string;
 
   customerForm = new FormGroup({
-    CusID: new FormControl('', [Validators.required]),
+    CusID: new FormControl('', [Validators.required, Validators.pattern('C[0-9]{2}')]),
     name: new FormControl('', [Validators.required]),
     gender: new FormControl('', [Validators.required]),
     password: new FormControl('', [
@@ -69,11 +69,22 @@ export class SignupComponent implements OnInit {
       console.log(err);
     }
   }
+
+  get CusID() {
+    return this.customerForm.get('CusID');
+  }
+  get name() {
+    return this.customerForm.get('name');
+  }
   get password() {
     return this.customerForm.get('password');
   }
 
   get email() {
     return this.customerForm.get('email');
+  }
+
+  get tel() {
+    return this.customerForm.get('tel');
   }
 }

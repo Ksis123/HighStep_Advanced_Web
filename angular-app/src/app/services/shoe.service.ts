@@ -11,7 +11,7 @@ export class ShoeService {
 
   constructor(private http: HttpClient) {}
 
-  menus: any;
+  shoe: any;
   category?: shoeModel[];
   submitStatus = false;
 
@@ -19,16 +19,16 @@ export class ShoeService {
     return this.http.get<shoe>('http://localhost:3000/api/shoe').pipe(
       map((data) => {
         if (data) {
-          this.menus = data;
-          console.log(this.menus);
+          this.shoe = data;
+          console.log(this.shoe);
         }
-        return this.menus;
+        return this.shoe;
       })
     );
   }
 
   getSomeShoe(id: number) {
-    return this.menus[id];
+    return this.shoe[id];
   }
 
   addShoe(data: any) {
