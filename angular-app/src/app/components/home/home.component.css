@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nunito:ital,wght@0,400;1,1000&display=swap');
 
+.image {
+    
+    background-image: url(./img/undraw_add_to_cart_re_wrdo.svg);
+    background-repeat: no-repeat;
+    width: auto;
+    height: auto;
+    background-position: center;
+    background-size: cover;
+}
+
 .style button {
     font-family: 'Nunito', sans-serif;
     padding: 15px 40px;
@@ -41,6 +51,8 @@
     transform: rotate(100deg);
     
 }
+
+
 
 
 
